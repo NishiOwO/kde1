@@ -27,6 +27,9 @@ for i in $@; do
 	esac
 done
 count=`grep processor /proc/cpuinfo | wc -l | sed "s/ //g"`
+if [ "x$count" = "x" ]; then
+	count=4
+fi
 
 echo "--- Qt1"
 mkdir -p qt1/build
