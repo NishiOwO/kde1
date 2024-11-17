@@ -35,8 +35,17 @@ for i in qt1 kdelibs kdebase kdegames; do
 	echo "--- $i"
 	mkdir -p $i/build
 	cd $i/build
-	cmake .. $args || exit 1
-	make -j$count || exit 1
-	rootcmd make install || exit 1
+	if [ ! -e "configured" ]; then
+		cmake .. $args || exit 1
+		touch configured
+	fi
+	if [ ! -e "built" ]; then
+		make -j$count || exit 1
+		touch built
+	fi
+	if [ ! -e "installed" ]; then
+		rootcmd make install || exit 1
+		touch installed
+	fi
 	cd ../..
 done
