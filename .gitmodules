@@ -13,3 +13,6 @@
 [submodule "kdeutils"]
 	path = kdeutils
 	url = https://github.com/nishiowo/kde1-kdeutils
+[submodule "kdenetwork"]
+	path = kdenetwork
+	url = https://github.com/nishiowo/kde1-kdenetwork
