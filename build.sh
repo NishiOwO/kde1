@@ -27,7 +27,7 @@ for i in $@; do
 	esac
 done
 count=`grep processor /proc/cpuinfo | wc -l | sed "s/ //g"`
-if [ "x$count" = "x" ]; then
+if [ "$count" = "0" ]; then
 	count=4
 fi
 
