@@ -16,3 +16,6 @@
 [submodule "kdenetwork"]
 	path = kdenetwork
 	url = https://github.com/nishiowo/kde1-kdenetwork
+[submodule "kdetoys"]
+	path = kdetoys
+	url = https://github.com/nishiowo/kde1-kdetoys
