@@ -3,7 +3,7 @@ args="-DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++"
 use_auth=""
 rootcmd () {
 	if [ "$use_auth" = "su" ]; then
-		su root -c "$@"
+		su root -c "`echo $@`"
 	else
 		$use_auth $@
 	fi
