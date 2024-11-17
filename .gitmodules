@@ -1,0 +1,9 @@
+[submodule "qt1"]
+	path = qt1
+	url = https://github.com/nishiowo/qt1
+[submodule "kdelibs"]
+	path = kdelibs
+	url = https://github.com/nishiowo/kde1-kdelibs
+[submodule "kdebase"]
+	path = kdebase
+	url = https://github.com/nishiowo/kde1-kdebase
