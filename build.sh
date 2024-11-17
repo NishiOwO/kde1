@@ -31,7 +31,7 @@ if [ "$count" = "0" ]; then
 	count=4
 fi
 
-for i in qt1 kdelibs kdebase kdegames kdeutils; do
+for i in qt1 kdelibs kdebase kdegames kdeutils kdenetwork; do
 	echo "--- $i"
 	mkdir -p $i/build
 	cd $i/build
