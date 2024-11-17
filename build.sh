@@ -21,6 +21,8 @@ for i in $@; do
 		--prefix=*)
 			args="$args -DCMAKE_INSTALL_PREFIX=`echo $i | sed "s/--prefix=//g"`"
 			rootcmd ln -fs `echo $i | sed "s/--prefix=//g"`/bin/moc-qt1 /usr/bin/moc-qt1
+			LD_LIBRARY_PATH="$LD_LIBRARY_PATH:`echo $i | sed "s/--prefix=//g"`/lib"
+			export LD_LIBRARY_PATH
 			;;
 	esac
 done
