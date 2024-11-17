@@ -31,26 +31,12 @@ if [ "$count" = "0" ]; then
 	count=4
 fi
 
-echo "--- Qt1"
-mkdir -p qt1/build
-cd qt1/build
-cmake .. $args || exit 1
-make -j$count || exit 1
-rootcmd make install || exit 1
-cd ../..
-
-echo "--- kdelibs"
-mkdir -p kdelibs/build
-cd kdelibs/build
-cmake .. $args || exit 1
-make -j$count || exit 1
-rootcmd make install || exit 1
-cd ../..
-
-echo "--- kdebase"
-mkdir -p kdebase/build
-cd kdebase/build
-cmake .. $args || exit 1
-make -j$count || exit 1
-rootcmd make install || exit 1
-cd ../..
+for i in qt1 kdelibs kdebase kdegames; do
+	echo "--- $i"
+	mkdir -p $i/build
+	cd $i/build
+	cmake .. $args || exit 1
+	make -j$count || exit 1
+	rootcmd make install || exit 1
+	cd ../..
+done

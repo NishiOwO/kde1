@@ -7,3 +7,6 @@
 [submodule "kdebase"]
 	path = kdebase
 	url = https://github.com/nishiowo/kde1-kdebase
+[submodule "kdegames"]
+	path = kdegames
+	url = https://github.com/nishiowo/kde1-kdegames
