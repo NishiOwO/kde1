@@ -1,5 +1,5 @@
 # KDE1
-I patched them so they work on modern platforms. \
+I patched them so they work on modern platforms (NetBSD/FreeBSD/Linux). \
 Simply run `./build.sh --prefix=/usr/kde1` to build.
 
 ## Notes for FreeBSD
