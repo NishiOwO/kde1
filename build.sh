@@ -1,6 +1,13 @@
 #!/bin/sh
-args="-DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++"
+args="-DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++  -DCMAKE_POLICY_VERSION_MINIMUM=3.5"
 use_auth=""
+if [ "`uname -s`" = "NetBSD" ]; then
+	CPPFLAGS="-I/usr/X11R7/include -I/usr/pkg/include"
+	LDFLAGS="-L/usr/X11R7/lib -L/usr/pkg/lib"
+	CXXFLAGS="$CPPFLAGS"
+	CFLAGS="$CPPFLAGS"
+	export CXXFLAGS CFLAGS LDFLAGS
+fi
 rootcmd () {
 	if [ "$use_auth" = "su" ]; then
 		su root -c "`echo $@`"
